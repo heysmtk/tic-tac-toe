@@ -1,9 +1,12 @@
 from modules.functions import *
+from modules.ascii import logo
 
 
 def run_game():
     current_player = "X"
+    print(logo)
     board_print()
+    print()
 
 
     while True:
@@ -19,7 +22,9 @@ def run_game():
             continue
 
         if player_move(current_player, row, col):
+            print()            
             board_print()
+            print()
 
             if check_winner(current_player):
                 print(f"Player {current_player} wins!")
